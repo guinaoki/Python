@@ -13,9 +13,14 @@ def hello_name(name):
 def get_status():
     return ({"status" : "OK"})
 
-@app.route('/soma/<int:n1>/<int:n2>')
-def soma(n1,n2):
-    return f'A soma de {n1} com {n2} é {n1+n2}'
+@app.route("/todo")
+def todoList():
+    return jsonify(
+        {"Tarefa 1": "Estudar Python",
+         "Tarefa 2" : "Estudar Java",
+         "Tarefa 3 " : "Fazer o CP de Python",
+         "Tarefa 4" : "Ir ao NEXT",
+         "Tarefa 5" : "Sextou!!!"})
 
 if __name__ == '__main__':
     app.run()
